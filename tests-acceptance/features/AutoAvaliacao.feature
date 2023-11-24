@@ -15,4 +15,3 @@ And existe uma tabela não preenchida com as colunas "MA", "MPA" e "MANA" e com 
 When eu preencho o campo "MA" com "8", o campo "MPA" com "7.8" e o campo "MANA" com "8" na meta "Entender o conceito de requisitos"
 And eu não preencho o campo "MA", nem o campo "MPA" e nem o campo "MANA" na meta “Especificar requisitos com qualidade”
 Then eu posso ver uma mensagem de erro 
-And eu posso ver uma opção para retornar à tela de preenchimento
