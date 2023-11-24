@@ -30,4 +30,18 @@ Then eu não vejo nenhum nome na lista de alunos
 And eu posso ver a quantidade de auto-avaliações discrepantes igual a 0
 And eu posso ver a porcentagem de auto-avaliações discrepantes igual a 0%
 
+Scenario: há discrepância
+Given uma turma de 3 alunos ("Maria", "Pedro", "Joana")
+And um total de duas metas na auto-avaliação (“Entender o conceito de requisitos” e “Especificar requisitos com qualidade”)
+And “Maria” se deu as notas “8”, “8,8” e “8” em ambas as metas
+And eu atribuí a "Maria" as notas “8”, “8,8” e “8” em ambas as metas
+And “Joana” se deu as notas “9”, “8,8” e “8” em ambas as metas 
+And eu atribuí a “Joana” as notas “10”, “9” e “8” em ambas as metas
+And “Pedro” se deu as notas “9”, “8,5” e “8” em ambas as metas
+And eu atribuí a “Pedro” as notas “7”, “7,5” e “8” em ambas as metas
+When eu clico no botão “Ver Discrepâncias”
+Then eu posso ver apenas o nome “Pedro” na lista de alunos
+And eu posso ver a quantidade de auto-avaliações discrepantes igual a 1
+And eu posso ver a porcentagem de auto-avaliações discrepantes igual a 33,3%
+
 
